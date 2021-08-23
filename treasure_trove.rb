@@ -14,3 +14,4 @@ module TreasureTrove
     TREASURES.sample
   end
 end
+
