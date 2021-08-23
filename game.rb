@@ -49,19 +49,22 @@ class Game
 
     strong_players, wimpy_players = @players.partition { |player| player.strong? }
 
-    puts "#{strong_players.size} strong players:"
+    puts "\n#{strong_players.size} strong players:"
     strong_players.each do |player|
       print_name_and_health(player)
     end
 
-    puts "#{wimpy_players.size} wimpy players:"
+    puts "\n#{wimpy_players.size} wimpy players:"
     wimpy_players.each do |player|
       print_name_and_health(player)
     end
 
     puts "\n#{total_points} total points from treasures found"
-    @players.each do |player|
+    @players.sort.each do |player|
       puts "\n#{player.name}'s point totals:"
+      player.each_found_treasure do |treasure|
+        puts "#{treasure.points} total #{treasure.name} points"
+      end
       puts "#{player.points} grand total points"
     end
 

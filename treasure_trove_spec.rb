@@ -52,4 +52,3 @@ describe TreasureTrove do
     TreasureTrove::TREASURES.should include(treasure)
   end
 end
-
